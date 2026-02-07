@@ -1,0 +1,41 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.env.*  # optional multiple env files
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Build / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# Logs
+*.log
+
+# Redis / temp files
+*.rdb
+*.aof
+
+# OS-specific
+.DS_Store
+Thumbs.db
