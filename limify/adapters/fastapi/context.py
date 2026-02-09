@@ -1,4 +1,4 @@
-from core.context import RequestContext
+from limify.core.context import RequestContext
 
 
 def build_request_context(request):

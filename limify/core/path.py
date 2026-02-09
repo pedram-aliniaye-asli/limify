@@ -1,5 +1,5 @@
-from core.context import RequestContext 
-from rules import Rule
+from limify.core.context import RequestContext 
+from limify.core.rules import Rule
 
 class PathMatcher:
     @staticmethod

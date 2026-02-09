@@ -2,7 +2,8 @@
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 from datetime import datetime, timezone
-from .context import build_request_context
+from limify.adapters.fastapi.context import build_request_context
+
 current_utc_timestamp = datetime.now(timezone.utc).timestamp()
 print(current_utc_timestamp)
 
