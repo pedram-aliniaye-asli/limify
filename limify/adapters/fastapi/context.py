@@ -1,12 +1,3 @@
-# method	policy matcher
-# path	endpoint rules
-# route_pattern	policy engine
-# headers	key / plan resolver
-# auth_hints	key / plan resolver
-# timestamp	algorithms
-# client_ip
-
-
 from dataclasses import dataclass, field 
 from datetime import datetime, timezone
 
