@@ -1,0 +1,3 @@
+DEFAULT_PLAN = None
+
+DEFAULT_RULE = None

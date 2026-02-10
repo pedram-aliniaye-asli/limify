@@ -45,10 +45,6 @@ class KeyResolver:
         return "anonymous", "global"
 
     @classmethod
-    def _build_key(
-        cls,
-        rule_id: str,
-        identity_type: str,
-        identity_value: str,
-    ) -> str:
+    def _build_key(cls, rule_id: str, identity_type: str, identity_value: str) -> str:
+
         return f"{cls.NAMESPACE}:{rule_id}:{identity_type}:{identity_value}"
