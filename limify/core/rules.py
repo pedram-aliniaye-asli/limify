@@ -8,6 +8,7 @@ class Rule:
     rate: str
     burst: int = 1
     priority: int = 0
+    queue: bool = False
 
     @staticmethod
     def rules_constructor(user_rules) -> list:
@@ -19,7 +20,8 @@ class Rule:
                 path=r["path"],
                 rate=str(r["rate"]),
                 burst=int(r.get("burst", 1)),
-                priority=int(r.get("priority", 0))
+                priority=int(r.get("priority", 0)),
+                queue=r.get("queue", False)
             )
             for r in user_rules
         ]
