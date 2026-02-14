@@ -4,7 +4,7 @@ from limify.core.algorithms.base import Algorithm, AsyncAlgorithm
 from limify.core.plans import Plan
 from limify.core.context import RequestContext
 from limify.core.redis_adapter import SyncRedisAdapter, AsyncRedisAdapter
-
+from limify.types import LimitationResult
 
 class TokenBucketAlgorithm(Algorithm):
     LUA_SCRIPT = """
@@ -29,9 +29,9 @@ class TokenBucketAlgorithm(Algorithm):
     if tokens >= 1 then
         tokens = tokens - 1
         redis.call("SET", KEYS[1], tokens .. ":" .. ARGV[3])
-        return 1
+        return {1, tokens}
     else
-        return 0
+        return {0, tokens}
     end
     """
     def __init__(self, redis: SyncRedisAdapter):
@@ -42,16 +42,16 @@ class TokenBucketAlgorithm(Algorithm):
         now = int(time.time())
 
         try:
-            allowed = self.redis.evalsha(
+            allowed, remaining = self.redis.evalsha(
                 self.sha, 1, key, plan.limit, plan.period_seconds, now
             )
         except NoScriptError:
             self.sha = self.redis.script_load(self.LUA_SCRIPT)
-            allowed = self.redis.evalsha(
+            allowed, remaining = self.redis.evalsha(
                 self.sha, 1, key, plan.limit, plan.period_seconds, now
             )
 
-        return bool(allowed)
+        return LimitationResult(bool(allowed), int(remaining), int(plan.limit), "RESET AFTER ADD HERE")
 
 
 
@@ -78,9 +78,9 @@ class AsyncTokenBucketAlgorithm(AsyncAlgorithm):
     if tokens >= 1 then
         tokens = tokens - 1
         redis.call("SET", KEYS[1], tokens .. ":" .. ARGV[3])
-        return 1
+        return {1, tokens}
     else
-        return 0
+        return {0, tokens}
     end
     """
     def __init__(self, redis: AsyncRedisAdapter):
@@ -94,13 +94,13 @@ class AsyncTokenBucketAlgorithm(AsyncAlgorithm):
         now = int(time.time())
 
         try:
-            allowed = await self.redis.evalsha(
+            allowed, remaining = await self.redis.evalsha(
                 self.sha, 1, key, plan.limit, plan.period_seconds, now
             )
         except NoScriptError:
             self.sha = await self.redis.script_load(self.LUA_SCRIPT)
-            allowed = await self.redis.evalsha(
+            allowed, remaining = await self.redis.evalsha(
                 self.sha, 1, key, plan.limit, plan.period_seconds, now
             )
 
-        return bool(allowed)
+        return bool(allowed), int(remaining)
