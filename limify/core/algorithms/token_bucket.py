@@ -1,6 +1,6 @@
 import time
 from redis.exceptions import NoScriptError
-from limify.core.algorithms.base import Algorithm
+from limify.core.algorithms.base import Algorithm, AsyncAlgorithm
 from limify.core.plans import Plan
 from limify.core.context import RequestContext
 from limify.core.redis_adapter import SyncRedisAdapter, AsyncRedisAdapter
@@ -55,7 +55,7 @@ class TokenBucketAlgorithm(Algorithm):
 
 
 
-class AsyncTokenBucketAlgorithm:
+class AsyncTokenBucketAlgorithm(AsyncAlgorithm):
     LUA_SCRIPT = """
     -- KEYS[1] = token bucket key
     -- ARGV[1] = limit
