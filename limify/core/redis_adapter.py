@@ -1,14 +1,10 @@
 from abc import ABC, abstractmethod
+import redis
+import redis.asyncio as aioredis
 
-class RedisAdapter(ABC):
-    @abstractmethod
-    def get(self, key: str):
-        ...
+# ---------------- SYNC ----------------
 
-    @abstractmethod
-    def set(self, key: str, value, ex=None):
-        ...
-
+class SyncRedisAdapter(ABC):
     @abstractmethod
     def evalsha(self, sha: str, num_keys: int, *args):
         ...
@@ -18,18 +14,9 @@ class RedisAdapter(ABC):
         ...
 
 
-import redis
-import redis.asyncio as aioredis
-
-class SyncRedisAdapter(RedisAdapter):
+class RedisSyncAdapter(SyncRedisAdapter):
     def __init__(self, client: redis.Redis):
         self.client = client
-
-    def get(self, key: str):
-        return self.client.get(key)
-
-    def set(self, key: str, value, ex=None):
-        self.client.set(key, value, ex=ex)
 
     def evalsha(self, sha: str, num_keys: int, *args):
         return self.client.evalsha(sha, num_keys, *args)
@@ -37,15 +24,22 @@ class SyncRedisAdapter(RedisAdapter):
     def script_load(self, script: str):
         return self.client.script_load(script)
 
-class AsyncRedisAdapter(RedisAdapter):
+
+# ---------------- ASYNC ----------------
+
+class AsyncRedisAdapter(ABC):
+    @abstractmethod
+    async def evalsha(self, sha: str, num_keys: int, *args):
+        ...
+
+    @abstractmethod
+    async def script_load(self, script: str):
+        ...
+
+
+class RedisAsyncAdapter(AsyncRedisAdapter):
     def __init__(self, client: aioredis.Redis):
         self.client = client
-
-    async def get(self, key: str):
-        return await self.client.get(key)
-
-    async def set(self, key: str, value, ex=None):
-        await self.client.set(key, value, ex=ex)
 
     async def evalsha(self, sha: str, num_keys: int, *args):
         return await self.client.evalsha(sha, num_keys, *args)
