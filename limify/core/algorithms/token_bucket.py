@@ -4,7 +4,7 @@ from limify.core.algorithms.base import Algorithm, AsyncAlgorithm
 from limify.core.plans import Plan
 from limify.core.context import RequestContext
 from limify.core.redis_adapter import SyncRedisAdapter, AsyncRedisAdapter
-from limify.types import LimitationResult
+from limify.core.limiter import LimitationResult
 
 class TokenBucketAlgorithm(Algorithm):
     LUA_SCRIPT = """
@@ -29,9 +29,13 @@ class TokenBucketAlgorithm(Algorithm):
     if tokens >= 1 then
         tokens = tokens - 1
         redis.call("SET", KEYS[1], tokens .. ":" .. ARGV[3])
-        return {1, tokens}
+        
+        return {1, tokens, 0} -- reset_after is 0 here because the request was allowed
     else
-        return {0, tokens}
+        local rate = tonumber(ARGV[1]) / tonumber(ARGV[2])
+        local needed = 1 - tokens
+        local reset_after = math.ceil(needed / rate)
+        return {0, tokens, reset_after}
     end
     """
     def __init__(self, redis: SyncRedisAdapter):
@@ -42,16 +46,16 @@ class TokenBucketAlgorithm(Algorithm):
         now = int(time.time())
 
         try:
-            allowed, remaining = self.redis.evalsha(
+            allowed, remaining, reset_after = self.redis.evalsha(
                 self.sha, 1, key, plan.limit, plan.period_seconds, now
             )
         except NoScriptError:
             self.sha = self.redis.script_load(self.LUA_SCRIPT)
-            allowed, remaining = self.redis.evalsha(
+            allowed, remaining, reset_after = self.redis.evalsha(
                 self.sha, 1, key, plan.limit, plan.period_seconds, now
             )
 
-        return LimitationResult(bool(allowed), int(remaining), int(plan.limit), "RESET AFTER ADD HERE")
+        return LimitationResult(bool(allowed), int(remaining), int(plan.limit), int(reset_after))
 
 
 
@@ -78,9 +82,12 @@ class AsyncTokenBucketAlgorithm(AsyncAlgorithm):
     if tokens >= 1 then
         tokens = tokens - 1
         redis.call("SET", KEYS[1], tokens .. ":" .. ARGV[3])
-        return {1, tokens}
+        return {1, tokens, 0}
     else
-        return {0, tokens}
+        local rate = tonumber(ARGV[1]) / tonumber(ARGV[2])
+        local needed = 1 - tokens
+        local reset_after = math.ceil(needed / rate)
+        return {0, tokens, reset_after}
     end
     """
     def __init__(self, redis: AsyncRedisAdapter):
@@ -94,13 +101,13 @@ class AsyncTokenBucketAlgorithm(AsyncAlgorithm):
         now = int(time.time())
 
         try:
-            allowed, remaining = await self.redis.evalsha(
+            allowed, remaining, reset_after = await self.redis.evalsha(
                 self.sha, 1, key, plan.limit, plan.period_seconds, now
             )
         except NoScriptError:
             self.sha = await self.redis.script_load(self.LUA_SCRIPT)
-            allowed, remaining = await self.redis.evalsha(
+            allowed, remaining, reset_after = await self.redis.evalsha(
                 self.sha, 1, key, plan.limit, plan.period_seconds, now
             )
 
-        return bool(allowed), int(remaining)
+        return LimitationResult(bool(allowed), int(remaining), int(plan.limit), int(reset_after))
