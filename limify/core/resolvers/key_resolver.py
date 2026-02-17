@@ -22,7 +22,7 @@ class KeyResolver:
         )
 
     # Internal KeyResolver Class Methods 
-
+    
     @staticmethod
     def _resolve_identity(context: RequestContext) -> tuple[str, str]:
         """
