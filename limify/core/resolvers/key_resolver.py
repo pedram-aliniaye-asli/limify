@@ -1,5 +1,6 @@
 from limify.core.context import RequestContext
 from limify.core.rules import Rule
+from limify.core.plans import Plan
 
 class KeyResolver:
     """
@@ -9,20 +10,23 @@ class KeyResolver:
     NAMESPACE = "limify"
 
     @classmethod
-    def resolve(cls, context: RequestContext, rule: Rule) -> str:
+    def resolve(cls, context: RequestContext, rule: Rule, plan: Plan | None) -> str:
         """
         Returns a canonical rate-limiting key.
         """
         identity_type, identity_value = cls._resolve_identity(context)
 
+        plan_id = plan.id if plan else "default"
+
         return cls._build_key(
             rule_id=rule.id,
+            plan_id=plan_id,
             identity_type=identity_type,
             identity_value=identity_value,
         )
 
     # Internal KeyResolver Class Methods 
-    
+
     @staticmethod
     def _resolve_identity(context: RequestContext) -> tuple[str, str]:
         """
@@ -45,6 +49,6 @@ class KeyResolver:
         return "anonymous", "global"
 
     @classmethod
-    def _build_key(cls, rule_id: str, identity_type: str, identity_value: str) -> str:
+    def _build_key(cls, rule_id: str, plan_id: str, identity_type: str, identity_value: str) -> str:
 
-        return f"{cls.NAMESPACE}:{rule_id}:{identity_type}:{identity_value}"
+        return f"{cls.NAMESPACE}:{rule_id}:{plan_id}:{identity_type}:{identity_value}"
