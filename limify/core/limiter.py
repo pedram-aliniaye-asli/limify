@@ -33,7 +33,7 @@ class Limiter:
         plan = self.plan_resolver.resolve(context, rule)
 
         #Resolve key
-        key = self.key_resolver.resolve(context, rule, plan)
+        key = self.key_resolver.resolve(context, rule) #removed plan for now
 
         #Call algorithm
         result = await self.algorithm.allow(key, plan, context)
