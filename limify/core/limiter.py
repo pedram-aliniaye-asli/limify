@@ -39,3 +39,4 @@ class Limiter:
         result = await self.algorithm.allow(key, plan, context)
 
         return result # result contains allowed + remaining + limit + reset_after
+# TO-DO check why in redis it's like that all keys are being called by each request instead of just one
