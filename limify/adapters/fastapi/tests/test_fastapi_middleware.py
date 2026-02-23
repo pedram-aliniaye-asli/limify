@@ -15,11 +15,7 @@ class MockLimiter:
         return self.result
 
 
-def build_starlette_request(
-    method="GET",
-    path="/",
-    headers=None,
-):
+def build_starlette_request(method="GET", path="/", headers=None):
     scope: Scope = {
         "type": "http",
         "method": method,

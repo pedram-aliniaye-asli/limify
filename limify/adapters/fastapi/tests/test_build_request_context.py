@@ -1,4 +1,3 @@
-import pytest
 from types import SimpleNamespace
 from limify.adapters.fastapi.context import build_request_context
 
