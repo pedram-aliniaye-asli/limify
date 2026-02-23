@@ -2,6 +2,9 @@ from limify.core.context import RequestContext
 
 
 def build_request_context(request):
+    #standardize the headers dictionary
+    headers = {key.lower(): value for key, value in request.headers.items()}
+    
     # client IP extraction, fallback to headers for proxied setups
     if "x-forwarded-for" in request.headers:
         client_ip = request.headers["x-forwarded-for"].split(",")[0].strip()
