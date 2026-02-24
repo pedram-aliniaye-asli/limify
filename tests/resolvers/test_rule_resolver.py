@@ -72,3 +72,6 @@ def test_rule_resolver_matches_wildcard_path():
 
     # matches default rule because of /** wildcard
     assert result.id == "default"
+
+
+# TO-DO: Continue adding unit tests
