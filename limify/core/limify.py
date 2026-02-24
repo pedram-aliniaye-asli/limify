@@ -3,9 +3,9 @@ from limify.core.resolvers.rule_resolver import RuleResolver
 from limify.core.resolvers.plan_resolver import PlanResolver
 from limify.core.resolvers.key_resolver import KeyResolver
 from limify.core.limiter import Limiter
-
+from limify.defaults import DEFAULT_RULE
 class Limify:
-    def __init__(self, rules, algorithm, rule_resolver=None, plan_resolver=None, key_resolver=None, default_rule=None):
+    def __init__(self, rules, algorithm, rule_resolver=None, plan_resolver=None, key_resolver=None, default_rule=DEFAULT_RULE):
         rules = Rule.rules_constructor(rules)
 
         self.rule_resolver = rule_resolver or RuleResolver(rules, default_rule)
