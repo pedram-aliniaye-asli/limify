@@ -110,7 +110,7 @@ config = LimifyConfig(
         {
             "id": "default",
             "method": "*",
-            "path": "/**", # This rule will include all requests with different methods on all endpoints and it's not suggested really! Just for demonstration purposes!
+            "path": "/**", # This rule will include all requests with different methods on all endpoints and <br>it's not suggested really! Just for demonstration purposes!
             "rate": "5/minute",
             "priority": 0,
         },
