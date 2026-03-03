@@ -58,13 +58,13 @@ Core is fully independent of frameworks.
 ### Core only
 
 ```
-pip install limify
+pip install limifyrate
 ```
 
 ### With FastAPI / Starlette adapter
 
 ```
-pip install "limify[fastapi]"
+pip install "limifyrate[fastapi]"
 ```
 
 ### Development install
