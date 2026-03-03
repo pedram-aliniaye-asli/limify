@@ -32,7 +32,7 @@ def make_rule():
 
 
 def make_plan():
-    return Plan(id="pro", limit="100/minute", period_seconds=5)
+    return Plan(id="pro", limit=100, period_seconds=5)
 
 
 @pytest.mark.asyncio

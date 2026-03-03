@@ -1,7 +1,6 @@
 from limify.core.rules import Rule
 
 
-DEFAULT_PLAN = None
 DEFAULT_RULE = None
 
 #Example default rule

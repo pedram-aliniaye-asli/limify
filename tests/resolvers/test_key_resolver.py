@@ -27,7 +27,7 @@ def make_rule():
 
 
 def make_plan():
-    return Plan(id="pro", limit="100/minute", period_seconds=5)
+    return Plan(id="pro", limit=100, period_seconds=5)
 
 #User identity has highest priority
 def test_key_resolver_user_priority():
