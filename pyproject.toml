@@ -54,6 +54,8 @@ fastapi = [
 dev = [
   "pytest>=8.0",
   "pytest-asyncio>=0.23",
+  "mkdocs<2",
+  "mkdocs-material<10",
 ]
 
 [project.urls]

@@ -1,0 +1,44 @@
+site_name: Limify
+site_description: Redis-backed, async-first, framework-agnostic rate limiting engine for Python
+site_author: Pedram Aliniaye Asli
+repo_url: https://github.com/pedram-aliniaye-asli/limify
+repo_name: pedram-aliniaye-asli/limify
+
+theme:
+  name: material
+  icon:
+    logo: material/laptop
+  features:
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quickstart.md
+  - Core Concepts:
+      - Architecture: core-concepts/architecture.md
+      - Configuration: core-concepts/configuration.md
+      - Rules: core-concepts/rules.md
+      - Rate Format: core-concepts/rate-format.md
+      - Identity Resolution: core-concepts/identity-resolution.md
+      - Plans: core-concepts/plans.md
+  - Internals:
+      - Algorithms: internals/algorithms.md
+      - Storage Adapters: internals/storage-adapters.md
+      - Framework Adapters: internals/framework-adapters.md
+  - Guides:
+      - Extension Guide: guides/extension-guide.md
+      - Release Guide: guides/release-guide.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
