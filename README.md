@@ -7,7 +7,10 @@ Limify provides a clean-architecture rate limiting core with pluggable storage a
 Limify is designed as infrastructure-level software for backend engineers, microservices, and API platforms.
 
 ---
+## Documentation
 
+[![Docs](https://img.shields.io/badge/docs-mkdocs-blue)](https://pedram-aliniaye-asli.github.io/limify)
+---
 ## Features
 
 * Framework-agnostic core
