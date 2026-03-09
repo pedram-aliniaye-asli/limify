@@ -5,12 +5,12 @@ Framework-agnostic, Redis-backed rate limiting engine for modern Python systems.
 </p>
 
 <p align="center">
-
-![PyPI](https://img.shields.io/pypi/v/limifyrate)
-![Python](https://img.shields.io/pypi/pyversions/limifyrate)
-![License](https://img.shields.io/github/license/pedram-aliniaye-asli/limify)
-[![Docs](https://img.shields.io/badge/docs-mkdocs-blue)](https://pedram-aliniaye-asli.github.io/limify)
-
+  <img src="https://img.shields.io/pypi/v/limifyrate" alt="PyPI">
+  <img src="https://img.shields.io/pypi/pyversions/limifyrate" alt="Python versions">
+  <img src="https://img.shields.io/github/license/pedram-aliniaye-asli/limify" alt="License">
+  <a href="https://pedram-aliniaye-asli.github.io/limify">
+    <img src="https://img.shields.io/badge/docs-mkdocs-blue" alt="Docs">
+  </a>
 </p>
 
 
