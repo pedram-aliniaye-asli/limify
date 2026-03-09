@@ -344,6 +344,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -360,6 +378,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#async-example-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Async Example (FastAPI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-internally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Happens Internally
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -884,6 +965,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#async-example-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Async Example (FastAPI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-internally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Happens Internally
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -903,7 +1036,18 @@
 
 
 <h1 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
-<p>Example using FastAPI with async Redis.</p>
+<p>This guide shows how to integrate <strong>Limify</strong> into a Python application.</p>
+<p>Limify supports both <strong>async</strong> and <strong>sync</strong> Redis clients.</p>
+<hr />
+<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
+<p>Core package:</p>
+<div class="highlight"><pre><span></span><code>pip install limifyrate
+</code></pre></div>
+<p>With FastAPI adapter:</p>
+<div class="highlight"><pre><span></span><code>pip install &quot;limifyrate[fastapi]&quot;
+</code></pre></div>
+<hr />
+<h2 id="async-example-fastapi">Async Example (FastAPI)<a class="headerlink" href="#async-example-fastapi" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">redis.asyncio</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">redis</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>
@@ -911,6 +1055,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">limify.adapters.fastapi.middleware</span><span class="w"> </span><span class="kn">import</span> <span class="n">LimifyMiddleware</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">limify.core.redis_adapter</span><span class="w"> </span><span class="kn">import</span> <span class="n">RedisAsyncAdapter</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">limify.core.algorithms.token_bucket</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsyncTokenBucketAlgorithm</span>
+
 
 <span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="s2">&quot;redis://localhost:6379&quot;</span><span class="p">)</span>
 
@@ -941,7 +1086,56 @@
     <span class="n">LimifyMiddleware</span><span class="p">,</span>
     <span class="n">limiter</span><span class="o">=</span><span class="n">limify</span><span class="o">.</span><span class="n">limiter</span><span class="p">,</span>
 <span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/items&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">items</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">}</span>
 </code></pre></div>
+<p>Requests exceeding the configured rate will return <strong>HTTP 429</strong>.</p>
+<hr />
+<h2 id="sync-example">Sync Example<a class="headerlink" href="#sync-example" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">redis</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">limify</span><span class="w"> </span><span class="kn">import</span> <span class="n">Limify</span><span class="p">,</span> <span class="n">LimifyConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">limify.core.redis_adapter</span><span class="w"> </span><span class="kn">import</span> <span class="n">RedisSyncAdapter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">limify.core.algorithms.token_bucket</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenBucketAlgorithm</span>
+
+
+<span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">Redis</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">6379</span><span class="p">)</span>
+
+<span class="n">adapter</span> <span class="o">=</span> <span class="n">RedisSyncAdapter</span><span class="p">(</span><span class="n">redis_client</span><span class="p">)</span>
+
+<span class="n">algorithm</span> <span class="o">=</span> <span class="n">TokenBucketAlgorithm</span><span class="p">(</span><span class="n">adapter</span><span class="p">)</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">LimifyConfig</span><span class="p">(</span>
+    <span class="n">rules</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/**&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="s2">&quot;5/minute&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">limify</span> <span class="o">=</span> <span class="n">Limify</span><span class="p">(</span>
+    <span class="n">algorithm</span><span class="o">=</span><span class="n">algorithm</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>The sync version can be used in synchronous frameworks or background workers.</p>
+<hr />
+<h2 id="what-happens-internally">What Happens Internally<a class="headerlink" href="#what-happens-internally" title="Permanent link">&para;</a></h2>
+<p>For each request Limify:</p>
+<ol>
+<li>Resolves the matching rule</li>
+<li>Determines the active plan</li>
+<li>Builds an identity key</li>
+<li>Executes the rate-limiting algorithm</li>
+<li>Allows or blocks the request</li>
+</ol>
+<p>The token bucket state is stored in <strong>Redis</strong> and updated atomically using <strong>Lua scripts</strong>.</p>
 
 
 

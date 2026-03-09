@@ -545,6 +545,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity Resolution
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -561,6 +579,174 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identity-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity Priority
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-identity-priority-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Identity Priority Exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis-key-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis Key Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independent-rate-limit-buckets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Independent Rate Limit Buckets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Scenario
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anonymous-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anonymous Traffic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requestcontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RequestContext
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-design-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Design Matters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why This Design Matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-tenant-saas-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-tenant SaaS platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-based-rate-limiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User-based rate limiting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anonymous-traffic-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anonymous traffic control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -884,6 +1070,163 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identity-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity Priority
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-identity-priority-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Identity Priority Exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis-key-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis Key Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independent-rate-limit-buckets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Independent Rate Limit Buckets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Scenario
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anonymous-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anonymous Traffic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requestcontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RequestContext
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-design-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Design Matters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why This Design Matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-tenant-saas-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-tenant SaaS platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-based-rate-limiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User-based rate limiting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anonymous-traffic-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anonymous traffic control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -903,15 +1246,149 @@
 
 
 <h1 id="identity-resolution">Identity Resolution<a class="headerlink" href="#identity-resolution" title="Permanent link">&para;</a></h1>
-<p>Default identity priority:</p>
+<p>Identity resolution determines <strong>who the rate limit applies to</strong>.</p>
+<p>Instead of limiting requests globally, Limify isolates rate limits per identity.</p>
+<p>This ensures that one user or client cannot consume the entire rate limit for everyone else.</p>
+<hr />
+<h2 id="identity-priority">Identity Priority<a class="headerlink" href="#identity-priority" title="Permanent link">&para;</a></h2>
+<p>When a request arrives, Limify determines the request identity using the following priority order:</p>
 <ol>
-<li>user_id</li>
-<li>org_id</li>
-<li>api_key</li>
-<li>client_ip</li>
-<li>anonymous</li>
+<li><code>user_id</code></li>
+<li><code>org_id</code></li>
+<li><code>api_key</code></li>
+<li><code>client_ip</code></li>
+<li><code>anonymous</code></li>
 </ol>
-<p>Each identity has an independent rate limit bucket.</p>
+<p>The <strong>first available identity is used</strong>.</p>
+<p>Example request context:</p>
+<div class="highlight"><pre><span></span><code><span class="n">RequestContext</span><span class="p">(</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+    <span class="n">path</span><span class="o">=</span><span class="s2">&quot;/items&quot;</span><span class="p">,</span>
+    <span class="n">user_id</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">org_id</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">client_ip</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>In this case:</p>
+<div class="highlight"><pre><span></span><code>user_id = 42
+</code></pre></div>
+<p>So the identity used will be:</p>
+<div class="highlight"><pre><span></span><code>user:42
+</code></pre></div>
+<p>Even though <code>org_id</code> and <code>client_ip</code> exist, they are ignored because <code>user_id</code> has higher priority.</p>
+<hr />
+<h2 id="why-identity-priority-exists">Why Identity Priority Exists<a class="headerlink" href="#why-identity-priority-exists" title="Permanent link">&para;</a></h2>
+<p>Different applications identify clients differently.</p>
+<p>For example:</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Best Identity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authenticated user</td>
+<td><code>user_id</code></td>
+</tr>
+<tr>
+<td>Multi-tenant SaaS</td>
+<td><code>org_id</code></td>
+</tr>
+<tr>
+<td>Public API</td>
+<td><code>api_key</code></td>
+</tr>
+<tr>
+<td>Anonymous traffic</td>
+<td><code>client_ip</code></td>
+</tr>
+</tbody>
+</table>
+<p>The priority system allows Limify to automatically choose the <strong>most specific identity available</strong>.</p>
+<hr />
+<h2 id="redis-key-structure">Redis Key Structure<a class="headerlink" href="#redis-key-structure" title="Permanent link">&para;</a></h2>
+<p>Once an identity is selected, Limify constructs a deterministic Redis key.</p>
+<p>Format:</p>
+<div class="highlight"><pre><span></span><code>limify:{rule_id}:{plan_id}:{identity_type}:{identity_value}
+</code></pre></div>
+<p>Example keys:</p>
+<div class="highlight"><pre><span></span><code>limify:items:default:user:42
+limify:items:pro:apikey:abc123
+limify:default:default:ip:127.0.0.1
+</code></pre></div>
+<p>This ensures that each identity has a <strong>separate token bucket</strong>.</p>
+<hr />
+<h2 id="independent-rate-limit-buckets">Independent Rate Limit Buckets<a class="headerlink" href="#independent-rate-limit-buckets" title="Permanent link">&para;</a></h2>
+<p>Each identity receives its own rate limit bucket.</p>
+<p>Example rule:</p>
+<div class="highlight"><pre><span></span><code>10/minute
+</code></pre></div>
+<p>Requests:</p>
+<div class="highlight"><pre><span></span><code>User 1 → 10/minute
+User 2 → 10/minute
+User 3 → 10/minute
+</code></pre></div>
+<p>User 1 exhausting their quota does <strong>not affect other users</strong>.</p>
+<hr />
+<h2 id="example-scenario">Example Scenario<a class="headerlink" href="#example-scenario" title="Permanent link">&para;</a></h2>
+<p>Rule:</p>
+<div class="highlight"><pre><span></span><code>10/minute
+</code></pre></div>
+<p>Requests:</p>
+<div class="highlight"><pre><span></span><code>User A → 10 requests allowed
+User B → 10 requests allowed
+User C → 10 requests allowed
+</code></pre></div>
+<p>Each user has their own bucket:</p>
+<div class="highlight"><pre><span></span><code>limify:items:default:user:A
+limify:items:default:user:B
+limify:items:default:user:C
+</code></pre></div>
+<hr />
+<h2 id="anonymous-traffic">Anonymous Traffic<a class="headerlink" href="#anonymous-traffic" title="Permanent link">&para;</a></h2>
+<p>If no identity is provided in the request context, Limify falls back to the client IP.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>client_ip = 192.168.1.10
+</code></pre></div>
+<p>Redis key:</p>
+<div class="highlight"><pre><span></span><code>limify:default:default:ip:192.168.1.10
+</code></pre></div>
+<p>This allows Limify to rate limit anonymous clients.</p>
+<hr />
+<h2 id="requestcontext">RequestContext<a class="headerlink" href="#requestcontext" title="Permanent link">&para;</a></h2>
+<p>Identity resolution uses the <code>RequestContext</code> object.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">RequestContext</span><span class="p">(</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+    <span class="n">path</span><span class="o">=</span><span class="s2">&quot;/items&quot;</span><span class="p">,</span>
+    <span class="n">user_id</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">org_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">client_ip</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Framework adapters (like FastAPI middleware) are responsible for constructing this context.</p>
+<hr />
+<h2 id="why-this-design-matters">Why This Design Matters<a class="headerlink" href="#why-this-design-matters" title="Permanent link">&para;</a></h2>
+<p>This design enables:</p>
+<h3 id="multi-tenant-saas-platforms">Multi-tenant SaaS platforms<a class="headerlink" href="#multi-tenant-saas-platforms" title="Permanent link">&para;</a></h3>
+<p>Organizations receive independent rate limits.</p>
+<h3 id="user-based-rate-limiting">User-based rate limiting<a class="headerlink" href="#user-based-rate-limiting" title="Permanent link">&para;</a></h3>
+<p>Authenticated users are isolated from each other.</p>
+<h3 id="public-apis">Public APIs<a class="headerlink" href="#public-apis" title="Permanent link">&para;</a></h3>
+<p>API keys can be rate limited independently.</p>
+<h3 id="anonymous-traffic-control">Anonymous traffic control<a class="headerlink" href="#anonymous-traffic-control" title="Permanent link">&para;</a></h3>
+<p>IP-based limits protect services from abuse.</p>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Identity resolution determines <strong>who the rate limit applies to</strong>.</p>
+<p>Limify selects the identity using the following priority:</p>
+<div class="highlight"><pre><span></span><code>user_id → org_id → api_key → client_ip → anonymous
+</code></pre></div>
+<p>Each identity produces its own Redis key and receives an independent rate limit bucket.</p>
 
 
 

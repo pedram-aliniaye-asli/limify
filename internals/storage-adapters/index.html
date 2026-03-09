@@ -690,6 +690,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Adapters
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -706,6 +724,163 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-storage-adapters-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Storage Adapters Exist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis-based-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis-Based Storage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redisasyncadapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RedisAsyncAdapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redissyncadapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RedisSyncAdapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapter-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adapter Responsibilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adapter Responsibilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lua-script-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lua script loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-interaction-abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis interaction abstraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-call-redis-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Not Call Redis Directly?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-storage-adapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Storage Adapters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -884,6 +1059,152 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-storage-adapters-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Storage Adapters Exist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis-based-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis-Based Storage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redisasyncadapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RedisAsyncAdapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redissyncadapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RedisSyncAdapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapter-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adapter Responsibilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adapter Responsibilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lua-script-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lua script loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-interaction-abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis interaction abstraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-call-redis-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Not Call Redis Directly?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-storage-adapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Storage Adapters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -903,12 +1224,178 @@
 
 
 <h1 id="storage-adapters">Storage Adapters<a class="headerlink" href="#storage-adapters" title="Permanent link">&para;</a></h1>
-<p>Supported storage adapters:</p>
+<p>Storage adapters provide the persistence layer used by rate-limiting algorithms.</p>
+<p>They are responsible for storing and retrieving the <strong>token bucket state</strong>.</p>
+<p>Currently supported adapters:</p>
 <ul>
-<li>RedisAsyncAdapter</li>
-<li>RedisSyncAdapter</li>
+<li><code>RedisAsyncAdapter</code></li>
+<li><code>RedisSyncAdapter</code></li>
 </ul>
-<p>Adapters abstract Redis operations used by algorithms.</p>
+<p>Both adapters interact with Redis but expose a simplified interface to the algorithm layer.</p>
+<hr />
+<h2 id="why-storage-adapters-exist">Why Storage Adapters Exist<a class="headerlink" href="#why-storage-adapters-exist" title="Permanent link">&para;</a></h2>
+<p>Limify separates <strong>rate-limiting logic</strong> from <strong>data storage</strong>.</p>
+<p>This design follows the principles of clean architecture.</p>
+<p>The algorithm should not need to know:</p>
+<ul>
+<li>which database is used</li>
+<li>how commands are executed</li>
+<li>whether the client is synchronous or asynchronous</li>
+</ul>
+<p>Instead, the algorithm communicates with a storage adapter that abstracts these details.</p>
+<p>This allows Limify to:</p>
+<ul>
+<li>support multiple storage backends</li>
+<li>support both sync and async execution</li>
+<li>remain framework independent</li>
+<li>simplify testing</li>
+</ul>
+<hr />
+<h2 id="redis-based-storage">Redis-Based Storage<a class="headerlink" href="#redis-based-storage" title="Permanent link">&para;</a></h2>
+<p>Limify currently uses Redis as the storage backend.</p>
+<p>Redis is well suited for rate limiting because it provides:</p>
+<ul>
+<li>extremely low latency</li>
+<li>atomic operations</li>
+<li>Lua scripting support</li>
+<li>distributed access across multiple application instances</li>
+</ul>
+<p>Each identity's rate limit state is stored in a Redis key.</p>
+<p>Example key:</p>
+<div class="highlight"><pre><span></span><code>limify:items:default:user:42
+</code></pre></div>
+<p>Value stored in Redis:</p>
+<div class="highlight"><pre><span></span><code>tokens:last_timestamp
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>7:1718654321
+</code></pre></div>
+<p>Meaning:</p>
+<div class="highlight"><pre><span></span><code>tokens = 7
+last_refill_timestamp = 1718654321
+</code></pre></div>
+<hr />
+<h2 id="redisasyncadapter">RedisAsyncAdapter<a class="headerlink" href="#redisasyncadapter" title="Permanent link">&para;</a></h2>
+<p><code>RedisAsyncAdapter</code> is designed for asynchronous Python applications.</p>
+<p>It works with the <code>redis.asyncio</code> client.</p>
+<p>Typical environments:</p>
+<ul>
+<li>FastAPI</li>
+<li>Starlette</li>
+<li>async workers</li>
+<li>asyncio-based services</li>
+</ul>
+<p>Example usage:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">redis.asyncio</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">redis</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">limify.core.redis_adapter</span><span class="w"> </span><span class="kn">import</span> <span class="n">RedisAsyncAdapter</span>
+
+<span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="s2">&quot;redis://localhost:6379&quot;</span><span class="p">)</span>
+
+<span class="n">adapter</span> <span class="o">=</span> <span class="n">RedisAsyncAdapter</span><span class="p">(</span><span class="n">redis_client</span><span class="p">)</span>
+</code></pre></div>
+<p>The async adapter exposes coroutine-based operations used by the algorithm.</p>
+<p>Example operations:</p>
+<div class="highlight"><pre><span></span><code>script_load
+evalsha
+</code></pre></div>
+<p>These methods allow the algorithm to execute Lua scripts asynchronously.</p>
+<hr />
+<h2 id="redissyncadapter">RedisSyncAdapter<a class="headerlink" href="#redissyncadapter" title="Permanent link">&para;</a></h2>
+<p><code>RedisSyncAdapter</code> is designed for synchronous Python applications.</p>
+<p>It works with the standard Redis client.</p>
+<p>Typical environments:</p>
+<ul>
+<li>Flask</li>
+<li>Django</li>
+<li>background workers</li>
+<li>CLI applications</li>
+</ul>
+<p>Example usage:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">redis</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">limify.core.redis_adapter</span><span class="w"> </span><span class="kn">import</span> <span class="n">RedisSyncAdapter</span>
+
+<span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">Redis</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">6379</span><span class="p">)</span>
+
+<span class="n">adapter</span> <span class="o">=</span> <span class="n">RedisSyncAdapter</span><span class="p">(</span><span class="n">redis_client</span><span class="p">)</span>
+</code></pre></div>
+<p>The synchronous adapter exposes the same interface but executes Redis commands synchronously.</p>
+<hr />
+<h2 id="adapter-responsibilities">Adapter Responsibilities<a class="headerlink" href="#adapter-responsibilities" title="Permanent link">&para;</a></h2>
+<p>Storage adapters are responsible for:</p>
+<h3 id="lua-script-loading">Lua script loading<a class="headerlink" href="#lua-script-loading" title="Permanent link">&para;</a></h3>
+<p>The token bucket algorithm loads its Lua script into Redis:</p>
+<div class="highlight"><pre><span></span><code>SCRIPT LOAD
+</code></pre></div>
+<p>This returns a script SHA identifier used for future execution.</p>
+<hr />
+<h3 id="script-execution">Script execution<a class="headerlink" href="#script-execution" title="Permanent link">&para;</a></h3>
+<p>Adapters execute the script using:</p>
+<div class="highlight"><pre><span></span><code>EVALSHA
+</code></pre></div>
+<p>Arguments passed to the script include:</p>
+<div class="highlight"><pre><span></span><code>limit
+period_seconds
+timestamp
+</code></pre></div>
+<p>The script performs all rate limit calculations atomically.</p>
+<hr />
+<h3 id="redis-interaction-abstraction">Redis interaction abstraction<a class="headerlink" href="#redis-interaction-abstraction" title="Permanent link">&para;</a></h3>
+<p>Instead of the algorithm calling Redis directly, it calls adapter methods such as:</p>
+<div class="highlight"><pre><span></span><code>script_load(...)
+evalsha(...)
+</code></pre></div>
+<p>This abstraction makes the algorithm independent of the Redis client implementation.</p>
+<hr />
+<h2 id="why-not-call-redis-directly">Why Not Call Redis Directly?<a class="headerlink" href="#why-not-call-redis-directly" title="Permanent link">&para;</a></h2>
+<p>Without adapters, the algorithm would need to know:</p>
+<ul>
+<li>Redis client type</li>
+<li>async vs sync execution</li>
+<li>command syntax</li>
+<li>connection handling</li>
+</ul>
+<p>Adapters isolate this complexity.</p>
+<p>This improves:</p>
+<ul>
+<li>maintainability</li>
+<li>testability</li>
+<li>extensibility</li>
+</ul>
+<hr />
+<h2 id="example-flow">Example Flow<a class="headerlink" href="#example-flow" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Limify receives a request</li>
+<li>The limiter resolves the rule, plan, and identity</li>
+<li>The algorithm calls the storage adapter</li>
+<li>The adapter executes the Lua script in Redis</li>
+<li>Redis updates the token bucket state</li>
+<li>The algorithm returns the rate-limit decision</li>
+</ol>
+<hr />
+<h2 id="future-storage-adapters">Future Storage Adapters<a class="headerlink" href="#future-storage-adapters" title="Permanent link">&para;</a></h2>
+<p>The adapter architecture allows new storage backends to be implemented easily.</p>
+<p>Potential future adapters:</p>
+<div class="highlight"><pre><span></span><code>InMemoryAdapter
+PostgreSQLAdapter
+MemcachedAdapter
+Distributed cache systems
+</code></pre></div>
+<p>As long as the adapter implements the expected interface, it can be used by Limify algorithms.</p>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Storage adapters provide the persistence layer for Limify.</p>
+<p>They:</p>
+<ul>
+<li>store rate limit state</li>
+<li>execute Redis Lua scripts</li>
+<li>abstract Redis client details</li>
+<li>support both sync and async execution</li>
+</ul>
+<p>Currently supported adapters:</p>
+<div class="highlight"><pre><span></span><code>RedisAsyncAdapter
+RedisSyncAdapter
+</code></pre></div>
+<p>This design keeps the algorithm layer clean and allows Limify to support multiple storage systems in the future.</p>
 
 
 

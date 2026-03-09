@@ -895,10 +895,115 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#version-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Meaning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version Meaning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MAJOR version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minor-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MINOR version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PATCH version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-10-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-1.0 Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Release
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Publishing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#publishing" class="md-nav__link">
     <span class="md-ellipsis">
       
         Publishing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pypi-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PyPI Package
       
     </span>
   </a>
@@ -959,10 +1064,115 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#version-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Meaning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version Meaning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MAJOR version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minor-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MINOR version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PATCH version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-10-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-1.0 Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Release
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Publishing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#publishing" class="md-nav__link">
     <span class="md-ellipsis">
       
         Publishing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pypi-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PyPI Package
       
     </span>
   </a>
@@ -990,17 +1200,105 @@
 
 
 <h1 id="release-guide">Release Guide<a class="headerlink" href="#release-guide" title="Permanent link">&para;</a></h1>
+<p>This guide explains how new versions of Limify are released.</p>
+<p>Limify follows <strong>semantic versioning</strong> and uses Git tags and GitHub Actions to publish packages.</p>
+<hr />
 <h2 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h2>
+<p>Limify follows <strong>Semantic Versioning (SemVer)</strong>.</p>
+<p>Version format:</p>
+<div class="highlight"><pre><span></span><code>MAJOR.MINOR.PATCH
+</code></pre></div>
+<p>Example versions:</p>
+<div class="highlight"><pre><span></span><code>0.1.0
+0.1.1
+0.2.0
+</code></pre></div>
+<hr />
+<h2 id="version-meaning">Version Meaning<a class="headerlink" href="#version-meaning" title="Permanent link">&para;</a></h2>
+<h3 id="major-version">MAJOR version<a class="headerlink" href="#major-version" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>X.0.0
+</code></pre></div>
+<p>Incremented when breaking changes are introduced.</p>
+<p>Examples:</p>
+<ul>
+<li>removing public APIs</li>
+<li>changing configuration behavior</li>
+<li>changing request context structure</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>1.0.0
+</code></pre></div>
+<hr />
+<h3 id="minor-version">MINOR version<a class="headerlink" href="#minor-version" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>0.X.0
+</code></pre></div>
+<p>Incremented when new features are added without breaking existing functionality.</p>
+<p>Examples:</p>
+<ul>
+<li>new algorithms</li>
+<li>new framework adapters</li>
+<li>new storage adapters</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>0.2.0
+</code></pre></div>
+<hr />
+<h3 id="patch-version">PATCH version<a class="headerlink" href="#patch-version" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>0.0.X
+</code></pre></div>
+<p>Incremented for bug fixes or small improvements.</p>
+<p>Examples:</p>
+<ul>
+<li>fixing algorithm edge cases</li>
+<li>documentation updates</li>
+<li>small performance improvements</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>0.1.1
+</code></pre></div>
+<hr />
+<h2 id="pre-10-versions">Pre-1.0 Versions<a class="headerlink" href="#pre-10-versions" title="Permanent link">&para;</a></h2>
+<p>Before version <strong>1.0.0</strong>, the API may still evolve.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>0.1.x
+</code></pre></div>
+<p>During this stage:</p>
+<ul>
+<li>APIs may change</li>
+<li>internal architecture may evolve</li>
+<li>documentation may expand</li>
+</ul>
+<p>However, changes will still aim to remain stable whenever possible.</p>
+<hr />
+<h2 id="creating-a-release">Creating a Release<a class="headerlink" href="#creating-a-release" title="Permanent link">&para;</a></h2>
+<p>Releases are created using <strong>Git tags</strong>.</p>
+<h2 id="automated-publishing">Automated Publishing<a class="headerlink" href="#automated-publishing" title="Permanent link">&para;</a></h2>
+<p>When a tag is pushed, the GitHub Actions workflow is triggered.</p>
+<p>The workflow performs the following steps:</p>
+<ol>
+<li>checks out the repository</li>
+<li>installs build tools</li>
+<li>builds the package</li>
+<li>runs package validation</li>
+<li>uploads the package to PyPI</li>
+</ol>
+<p>This means <strong>publishing happens automatically after tagging</strong>.</p>
+<h2 id="versioning_1">Versioning<a class="headerlink" href="#versioning_1" title="Permanent link">&para;</a></h2>
 <p>Limify follows semantic versioning.</p>
 <p>Example:</p>
 <p>0.1.0<br />
 0.1.1<br />
 0.2.0  </p>
 <h2 id="publishing">Publishing<a class="headerlink" href="#publishing" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git tag v0.1.3
-git push origin v0.1.3
-</code></pre></div>
 <p>GitHub Actions publishes the package to PyPI.</p>
+<h2 id="pypi-package">PyPI Package<a class="headerlink" href="#pypi-package" title="Permanent link">&para;</a></h2>
+<p>After the workflow completes successfully, the new version becomes available on PyPI.</p>
+<p>Users can install it with:</p>
+<div class="highlight"><pre><span></span><code>pip install limifyrate
+</code></pre></div>
+<p>To upgrade:</p>
+<div class="highlight"><pre><span></span><code>pip install --upgrade limifyrate
+</code></pre></div>
 
 
 
