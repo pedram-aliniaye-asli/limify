@@ -18,6 +18,22 @@ Limify provides a clean-architecture rate limiting core with pluggable storage a
 Limify is designed as infrastructure-level software for backend engineers, microservices, and API platforms.
 
 ---
+
+## Why Limify?
+
+Rate limiting is a core requirement for modern APIs, but most Python solutions are tightly coupled to specific frameworks.
+
+Limify was designed as reusable infrastructure that can be integrated across services and frameworks.
+
+Key goals:
+
+- framework-agnostic rate limiting core
+- Redis-backed distributed limits
+- clean architecture and testable design
+- support for SaaS-style plan limits
+- extensible algorithms and storage adapters
+
+---
 ## Documentation
 
 https://pedram-aliniaye-asli.github.io/limify
@@ -369,3 +385,12 @@ Pedram Aliniaye Asli
 ---
 
 Limify is designed as reusable infrastructure for modern backend systems.
+
+
+## Support the Project
+
+If you find Limify useful, consider giving the repository a star.
+
+It helps others discover the project and motivates continued development.
+
+⭐ https://github.com/pedram-aliniaye-asli/limify
