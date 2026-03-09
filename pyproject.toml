@@ -61,7 +61,7 @@ dev = [
 [project.urls]
 Homepage = "https://github.com/pedram-aliniaye-asli/limify"
 Repository = "https://github.com/pedram-aliniaye-asli/limify"
-Documentation = "https://github.com/pedram-aliniaye-asli/limify"
+Documentation = "https://pedram-aliniaye-asli.github.io/limify"
 
 [tool.setuptools.packages.find]
 include = ["limify*"]
