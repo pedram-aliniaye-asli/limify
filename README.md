@@ -10,6 +10,7 @@ Framework-agnostic, Redis-backed rate limiting engine for modern Python systems.
 ![Python](https://img.shields.io/pypi/pyversions/limifyrate)
 ![License](https://img.shields.io/github/license/pedram-aliniaye-asli/limify)
 [![Docs](https://img.shields.io/badge/docs-mkdocs-blue)](https://pedram-aliniaye-asli.github.io/limify)
+
 </p>
 
 
