@@ -4,8 +4,14 @@
 Framework-agnostic, Redis-backed rate limiting engine for modern Python systems.
 </p>
 
+<p align="center">
 
+![PyPI](https://img.shields.io/pypi/v/limifyrate)
+![Python](https://img.shields.io/pypi/pyversions/limifyrate)
+![License](https://img.shields.io/github/license/pedram-aliniaye-asli/limify)
 [![Docs](https://img.shields.io/badge/docs-mkdocs-blue)](https://pedram-aliniaye-asli.github.io/limify)
+</p>
+
 
 
 Limify provides a clean-architecture rate limiting core with pluggable storage adapters, async and sync support, atomic Redis Lua execution, and framework adapters.
